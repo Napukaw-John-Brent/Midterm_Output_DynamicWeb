@@ -102,49 +102,59 @@ $percent_left = $total > 0 ? round(($remaining / $total) * 100, 1) : 0;
       <div class="card figma-teal category-card">
         <h3>Category Breakdown</h3>
         <div class="category-list">
+
           <div class="category-item">
-            <div class="category-header">
+            <div class="category-left">
               <span class="category-name">Food</span>
               <span class="category-amount">₱6,540 / ₱8,000 allocated</span>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill food" style="width: 82%"></div>
+            <div class="category-progress-row">
+              <div class="progress-bar">
+                <div class="progress-fill food" style="width: 82%"></div>
+              </div>
+              <span class="category-percentage">82%</span>
             </div>
-            <span class="category-percentage">82%</span>
           </div>
-          
+
           <div class="category-item">
-            <div class="category-header">
+            <div class="category-left">
               <span class="category-name">Transportation</span>
               <span class="category-amount">₱2,100 / ₱5,000 allocated</span>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill transport" style="width: 42%"></div>
+            <div class="category-progress-row">
+              <div class="progress-bar">
+                <div class="progress-fill transport" style="width: 42%"></div>
+              </div>
+              <span class="category-percentage">42%</span>
             </div>
-            <span class="category-percentage">42%</span>
           </div>
-          
+
           <div class="category-item">
-            <div class="category-header">
+            <div class="category-left">
               <span class="category-name">Bills</span>
               <span class="category-amount">₱3,800 / ₱4,000 allocated</span>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill bills" style="width: 95%"></div>
+            <div class="category-progress-row">
+              <div class="progress-bar">
+                <div class="progress-fill bills" style="width: 95%"></div>
+              </div>
+              <span class="category-percentage">95%</span>
             </div>
-            <span class="category-percentage">95%</span>
           </div>
-          
+
           <div class="category-item">
-            <div class="category-header">
+            <div class="category-left">
               <span class="category-name">Savings</span>
               <span class="category-amount">₱900 / ₱3,000 allocated</span>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill savings" style="width: 30%"></div>
+            <div class="category-progress-row">
+              <div class="progress-bar">
+                <div class="progress-fill savings" style="width: 30%"></div>
+              </div>
+              <span class="category-percentage">30%</span>
             </div>
-            <span class="category-percentage">30%</span>
           </div>
+
         </div>
       </div>
 
