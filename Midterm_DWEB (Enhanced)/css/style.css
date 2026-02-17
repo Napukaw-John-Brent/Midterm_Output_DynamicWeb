@@ -1,13 +1,13 @@
 /* ============================================
-   Budget App – Professional design system
+   SmartBudget – Design system (Figma)
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Colors */
-  --bg-deep: #0c1222;
-  --bg-mid: #111827;
+  /* Colors – SmartBudget Figma */
+  --bg-deep: #1A2828;
+  --bg-mid: #1e3232;
   --bg-card: rgba(255, 255, 255, 0.04);
   --bg-card-hover: rgba(255, 255, 255, 0.07);
   --border-subtle: rgba(255, 255, 255, 0.08);
@@ -15,9 +15,11 @@
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
   --text-muted: #64748b;
-  --accent: #38bdf8;
-  --accent-hover: #7dd3fc;
-  --accent-dim: rgba(56, 189, 248, 0.15);
+  --accent: #00CC99;
+  --accent-hover: #00e6ad;
+  --accent-dim: rgba(0, 204, 153, 0.15);
+  --btn-mint: #E0FFEE;
+  --btn-mint-hover: #c8f5dc;
   --success: #34d399;
   --success-dim: rgba(52, 211, 153, 0.15);
   --error: #f87171;
@@ -89,11 +91,7 @@ body.auth-page::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    url("../images/hero-pattern.svg") repeat,
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.2), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(15, 52, 96, 0.4), transparent 45%),
-    linear-gradient(180deg, #0f172a 0%, #0c1222 100%);
+  background: var(--bg-deep);
   z-index: 0;
   pointer-events: none;
 }
@@ -111,24 +109,21 @@ body.auth-page .hero-brand {
 }
 
 body.auth-page .hero-brand .logo {
-  width: 56px;
-  height: 56px;
+  width: 180px;
+  height: auto;
   margin: 0 auto var(--space-4);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-dim);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
 }
 
 body.auth-page .hero-brand .logo img {
-  width: 28px;
-  height: 28px;
+  width: 160px;
+  height: auto;
   display: block;
 }
 
-/* ---------- Landing / bootstrap page (click to enter) ---------- */
+/* ---------- Landing page – SmartBudget Figma ---------- */
 body.landing-page {
   display: flex;
   align-items: center;
@@ -144,11 +139,7 @@ body.landing-page::before {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    url("../images/hero-pattern.svg") repeat,
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.2), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(15, 52, 96, 0.4), transparent 45%),
-    linear-gradient(180deg, #0f172a 0%, #0c1222 100%);
+  background: var(--bg-deep);
   z-index: 0;
   pointer-events: none;
 }
@@ -165,20 +156,17 @@ body.landing-page::before {
 }
 
 .landing-logo {
-  width: 80px;
-  height: 80px;
+  width: 180px;
+  height: auto;
   margin: 0 auto var(--space-6);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-dim);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
 }
 
 .landing-logo img {
-  width: 48px;
-  height: 48px;
+  width: 160px;
+  height: auto;
   display: block;
 }
 
@@ -187,40 +175,62 @@ body.landing-page::before {
   font-size: var(--text-3xl);
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--text-primary);
+  color: var(--accent);
 }
 
 .landing-tagline {
   margin: var(--space-4) 0 0;
   font-size: var(--text-lg);
-  color: var(--text-secondary);
+  color: var(--accent);
   line-height: 1.5;
+  font-weight: 400;
 }
 
-.landing-cta {
-  display: inline-block;
+.landing-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.landing-btn {
+  display: block;
+  width: 100%;
+  max-width: 280px;
   padding: var(--space-4) var(--space-10);
   font-family: var(--font-sans);
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 600;
   color: var(--bg-deep);
-  background: var(--accent);
+  background: var(--btn-mint);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   text-decoration: none;
+  text-align: center;
   cursor: pointer;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  box-shadow: var(--shadow-md);
+  transition: background var(--transition), transform var(--transition);
 }
 
-.landing-cta:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+.landing-btn:hover {
+  background: var(--btn-mint-hover);
+  transform: translateY(-1px);
 }
 
-.landing-cta:active {
+.landing-btn:active {
   transform: translateY(0);
+}
+
+.landing-forgot {
+  font-size: var(--text-sm);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color var(--transition);
+}
+
+.landing-forgot:hover {
+  color: var(--accent-hover);
 }
 
 body.auth-page .hero-brand h1 {
@@ -228,7 +238,7 @@ body.auth-page .hero-brand h1 {
   font-size: var(--text-2xl);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: var(--text-primary);
+  color: var(--accent);
 }
 
 body.auth-page .hero-brand p {
@@ -257,10 +267,7 @@ body.app-page::before {
   content: '';
   position: fixed;
   inset: 0;
-  background:
-    url("../images/hero-pattern.svg") repeat,
-    radial-gradient(ellipse 100% 60% at 50% -30%, rgba(56, 189, 248, 0.08), transparent 50%),
-    linear-gradient(180deg, #0f172a 0%, #0c1222 100%);
+  background: var(--bg-deep);
   z-index: -1;
   pointer-events: none;
 }
@@ -419,15 +426,15 @@ button[type="submit"] {
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--bg-deep);
-  background: var(--accent);
+  background: var(--btn-mint);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   cursor: pointer;
   transition: background var(--transition), transform var(--transition);
 }
 
 button[type="submit"]:hover {
-  background: var(--accent-hover);
+  background: var(--btn-mint-hover);
   transform: translateY(-1px);
 }
 
@@ -465,6 +472,300 @@ button[type="submit"]:active {
 
 .footer-links a:hover {
   color: var(--accent-hover);
+}
+
+.footer-links-sep {
+  color: var(--text-muted);
+  margin: 0 var(--space-2);
+  font-weight: 400;
+}
+
+/* ---------- Auth Welcome / Create / Forgot / Pin (Figma) ---------- */
+body.auth-welcome .hero-brand,
+body.auth-create .hero-brand,
+body.auth-forgot .hero-brand,
+body.auth-newpassword .hero-brand,
+body.auth-pin .hero-brand {
+  margin-bottom: var(--space-4);
+}
+
+.auth-welcome-title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+}
+
+.auth-card {
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+}
+
+.auth-card-teal {
+  background: #2a4a4a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-card-heading {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.auth-card-sub {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+}
+
+.auth-card-sub.accent-text {
+  color: var(--accent);
+}
+
+.auth-card-desc {
+  margin: 0 0 var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.auth-form .input-label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  background: #E0F2E9;
+  color: var(--bg-deep);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.auth-form input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Password field with show/hide toggle */
+.input-password-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-password-wrap input {
+  padding-right: 3rem;
+  flex: 1;
+}
+
+.toggle-password {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-password:hover {
+  color: var(--accent);
+}
+
+.toggle-password img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* Primary button (bright teal) */
+.btn-primary {
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+  display: block;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+/* Secondary button (mint) */
+.btn-secondary {
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--bg-deep);
+  background: var(--btn-mint);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background var(--transition), transform var(--transition);
+  display: block;
+}
+
+.btn-secondary:hover {
+  background: var(--btn-mint-hover);
+  color: var(--bg-deep);
+  transform: translateY(-1px);
+}
+
+.auth-forgot-link {
+  font-size: var(--text-sm);
+  color: var(--accent);
+  text-decoration: none;
+  text-align: center;
+  margin-top: var(--space-2);
+}
+
+.auth-forgot-link:hover {
+  color: var(--accent-hover);
+}
+
+.accent-text {
+  color: var(--accent);
+}
+
+.auth-fingerprint {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.auth-or {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.auth-social {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--border-input);
+  background: transparent;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: var(--text-lg);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.social-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.auth-switch {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.auth-switch a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-switch a:hover {
+  color: var(--accent-hover);
+}
+
+.auth-terms {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.auth-terms a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.auth-terms a:hover {
+  text-decoration: underline;
+}
+
+/* 6-digit PIN input */
+.pin-form .pin-input-wrap {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.pin-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--text-primary);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  text-align: center;
+  font-family: var(--font-sans);
+}
+
+.pin-dot:focus {
+  outline: none;
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+}
+
+.success-msg {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--success);
+  background: var(--success-dim);
+  border-radius: var(--radius-sm);
+  margin: 0 0 var(--space-4);
 }
 
 /* ---------- Form row (inline amount + category + button) ---------- */

@@ -5,12 +5,17 @@
 CREATE DATABASE IF NOT EXISTS budget_app;
 USE budget_app;
 
--- Users (login/register)
+-- Users (login/register, forgot password, security pin)
 CREATE TABLE IF NOT EXISTS users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100),
   email VARCHAR(100) UNIQUE,
-  password VARCHAR(255)
+  mobile VARCHAR(30) NULL,
+  date_of_birth DATE NULL,
+  password VARCHAR(255),
+  security_pin VARCHAR(255) NULL,
+  reset_token VARCHAR(64) NULL,
+  reset_token_expires DATETIME NULL
 );
 
 -- Budgets per user per month

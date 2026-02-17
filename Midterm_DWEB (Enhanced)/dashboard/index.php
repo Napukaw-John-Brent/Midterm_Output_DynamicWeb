@@ -62,10 +62,11 @@ $remaining = $total - $spent;
     <header class="page-header">
       <h1>Monthly Budget Tracker</h1>
       <nav>
-        <a href="index.php">Dashboard</a> |
-        <a href="../deals/deals.php">Deals</a> |
-        <a href="../deals/qr-saver.php">QR Saver</a> |
-        <a href="../auth/login.php">Logout</a>
+        <a href="index.php">Dashboard</a>
+        <a href="../deals/deals.php">Deals</a>
+        <a href="../deals/qr-saver.php">QR Saver</a>
+        <a href="../auth/set-pin.php">Security Pin</a>
+        <a href="../auth/logout.php">Logout</a>
       </nav>
     </header>
 
